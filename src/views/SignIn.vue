@@ -40,7 +40,7 @@
               </template>
             </form-input>
             <div class="form--actions">
-              <btn color="primary" wide @click="signIn">
+              <btn color="primary" wide @click.prevent="signIn">
                 Sign In
               </btn>
             </div>
@@ -65,7 +65,7 @@ import IconEyeOff from '@/components/icons/IconEyeOff';
 // Mixins
 import notifier from '@/mixins/notifier.mixin';
 // Libs
-import { required, minLength, email } from 'vuelidate/lib/validators';
+import { required, email } from 'vuelidate/lib/validators';
 
 export default {
   name: 'sign-up',
@@ -93,7 +93,6 @@ export default {
         },
         password: {
           required,
-          minLength: minLength(8),
         },
       },
     };

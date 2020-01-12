@@ -18,7 +18,7 @@
               v-model="form.fullName"
               :error="
                 $v.form.fullName.$dirty && $v.form.fullName.$invalid
-                  ? 'Invalid full name'
+                  ? 'Enter valid name'
                   : false
               "
               @change="$v.form.fullName.$touch"
@@ -31,7 +31,7 @@
               v-model="form.email"
               :error="
                 $v.form.email.$dirty && $v.form.email.$invalid
-                  ? 'Invalid email'
+                  ? 'Enter valid email'
                   : false
               "
               @change="$v.form.email.$touch"
@@ -45,7 +45,7 @@
               v-model="form.password"
               :error="
                 $v.form.password.$dirty && $v.form.password.$invalid
-                  ? 'Invalid password'
+                  ? 'Enter valid password'
                   : false
               "
               @change="$v.form.password.$touch"
@@ -68,7 +68,7 @@
               v-model="form.repeatPassword"
               :error="
                 $v.form.repeatPassword.$dirty && $v.form.repeatPassword.$invalid
-                  ? 'Invalid repeatPassword'
+                  ? 'Passwords do not match'
                   : false
               "
               @change="$v.form.repeatPassword.$touch"
@@ -110,6 +110,7 @@ import IconEyeOff from '@/components/icons/IconEyeOff';
 import notifier from '@/mixins/notifier.mixin';
 // Libs
 import { required, minLength, email } from 'vuelidate/lib/validators';
+import { minCapitalChars, minSpecialChars } from '@/utils/validators';
 
 export default {
   name: 'sign-up',
@@ -123,10 +124,14 @@ export default {
   mixins: [notifier],
   data: () => ({
     form: {
-      fullName: 'John Doe',
-      email: 'example@acme.com',
-      password: '123456789',
-      repeatPassword: '123456789',
+      fullName: '',
+      email: '',
+      password: '',
+      repeatPassword: '',
+      // fullName: 'John Doe',
+      // email: 'example@acme.com',
+      // password: '123456789',
+      // repeatPassword: '123456789',
     },
     pwdVisible: false,
     rpPwdVisible: false,
@@ -136,7 +141,7 @@ export default {
       form: {
         fullName: {
           required,
-          minLength: minLength(3),
+          minLength: minLength(6),
         },
         email: {
           email,
@@ -145,9 +150,14 @@ export default {
         password: {
           required,
           minLength: minLength(8),
+          minCapitalChars: minCapitalChars(2),
+          minSpecialChars: minSpecialChars(1),
         },
         repeatPassword: {
           required,
+          eqPwd: function(value) {
+            return value === this.form.password;
+          },
         },
       },
     };

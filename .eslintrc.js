@@ -5,8 +5,8 @@ module.exports = {
   },
   extends: ['plugin:vue/essential', '@vue/prettier'],
   rules: {
-    'no-console': 'error',
-    'no-debugger': 'error',
+    'no-console': 'off',
+    'no-debugger': 'off',
   },
   parserOptions: {
     parser: 'babel-eslint',
