@@ -1,97 +1,100 @@
 <template>
   <div class="app-page page--sign-up">
     <div class="sign-up--container">
-      <h1 class="color--primary center">Sign Up</h1>
-      <!-- <div>valid: {{ !$v.form.$invalid }}</div>
+      <div class="container-fluid">
+        <h1 class="color--primary center">Sign Up</h1>
+        <!-- <div>valid: {{ !$v.form.$invalid }}</div>
       <div>fullName: {{ !$v.form.fullName.$invalid }}</div>
       <div>email: {{ !$v.form.email.$invalid }}</div>
       <div>password: {{ !$v.form.password.$invalid }}</div>
       <div>repeatPassword: {{ !$v.form.repeatPassword.$invalid }}</div> -->
-      <form class="form--default">
-        <div class="form--container">
-          <!-- Input: fullName -->
-          <form-input
-            type="text"
-            label="Full name"
-            wide
-            v-model="form.fullName"
-            :error="
-              $v.form.fullName.$dirty && $v.form.fullName.$invalid
-                ? 'Invalid full name'
-                : false
-            "
-            @change="$v.form.fullName.$touch"
-          ></form-input>
-          <!-- Input: Email -->
-          <form-input
-            type="email"
-            label="Email"
-            wide
-            v-model="form.email"
-            :error="
-              $v.form.email.$dirty && $v.form.email.$invalid
-                ? 'Invalid email'
-                : false
-            "
-            @change="$v.form.email.$touch"
-          ></form-input>
-          <!-- Input: password -->
-          <form-input
-            :type="pwdVisible ? 'text' : 'password'"
-            label="Password"
-            hint="Password must contain 8+ symbols, 1 special and 2 capital letters"
-            wide
-            v-model="form.password"
-            :error="
-              $v.form.password.$dirty && $v.form.password.$invalid
-                ? 'Invalid password'
-                : false
-            "
-            @change="$v.form.password.$touch"
-          >
-            <template v-slot:append-icon>
-              <svg-icon
-                class="color--primary cursor--pointer"
-                @click="pwdVisible = !pwdVisible"
-              >
-                <icon-eye v-if="pwdVisible" />
-                <icon-eye-off v-else />
-              </svg-icon>
-            </template>
-          </form-input>
-          <!-- Input: repeatPassword -->
-          <form-input
-            :type="rpPwdVisible ? 'text' : 'password'"
-            label="Repeat password"
-            wide
-            v-model="form.repeatPassword"
-            :error="
-              $v.form.repeatPassword.$dirty && $v.form.repeatPassword.$invalid
-                ? 'Invalid repeatPassword'
-                : false
-            "
-            @change="$v.form.repeatPassword.$touch"
-          >
-            <template v-slot:append-icon>
-              <svg-icon
-                class="color--primary cursor--pointer"
-                @click="rpPwdVisible = !rpPwdVisible"
-              >
-                <icon-eye v-if="rpPwdVisible" />
-                <icon-eye-off v-else />
-              </svg-icon>
-            </template>
-          </form-input>
-          <!-- Button: Submit -->
-          <btn color="primary" shape="round" wide @click.prevent="signUp()">
-            Sign Up
-          </btn>
-        </div>
-        <div class="form--footer color--primary weight--medium center">
-          <div>Already have an account?</div>
-          <router-link :to="{ name: 'sign-in' }">Sign In</router-link>
-        </div>
-      </form>
+        <form class="form--default">
+          <div class="form--container">
+            <!-- Input: fullName -->
+            <form-input
+              type="text"
+              label="Full name"
+              wide
+              v-model="form.fullName"
+              :error="
+                $v.form.fullName.$dirty && $v.form.fullName.$invalid
+                  ? 'Invalid full name'
+                  : false
+              "
+              @change="$v.form.fullName.$touch"
+            ></form-input>
+            <!-- Input: Email -->
+            <form-input
+              type="email"
+              label="Email"
+              wide
+              v-model="form.email"
+              :error="
+                $v.form.email.$dirty && $v.form.email.$invalid
+                  ? 'Invalid email'
+                  : false
+              "
+              @change="$v.form.email.$touch"
+            ></form-input>
+            <!-- Input: password -->
+            <form-input
+              :type="pwdVisible ? 'text' : 'password'"
+              label="Password"
+              hint="Password must contain 8+ symbols, 1 special and 2 capital letters"
+              wide
+              v-model="form.password"
+              :error="
+                $v.form.password.$dirty && $v.form.password.$invalid
+                  ? 'Invalid password'
+                  : false
+              "
+              @change="$v.form.password.$touch"
+            >
+              <template v-slot:append-icon>
+                <svg-icon
+                  class="color--primary cursor--pointer"
+                  @click="pwdVisible = !pwdVisible"
+                >
+                  <icon-eye v-if="pwdVisible" />
+                  <icon-eye-off v-else />
+                </svg-icon>
+              </template>
+            </form-input>
+            <!-- Input: repeatPassword -->
+            <form-input
+              :type="rpPwdVisible ? 'text' : 'password'"
+              label="Repeat password"
+              wide
+              v-model="form.repeatPassword"
+              :error="
+                $v.form.repeatPassword.$dirty && $v.form.repeatPassword.$invalid
+                  ? 'Invalid repeatPassword'
+                  : false
+              "
+              @change="$v.form.repeatPassword.$touch"
+            >
+              <template v-slot:append-icon>
+                <svg-icon
+                  class="color--primary cursor--pointer"
+                  @click="rpPwdVisible = !rpPwdVisible"
+                >
+                  <icon-eye v-if="rpPwdVisible" />
+                  <icon-eye-off v-else />
+                </svg-icon>
+              </template>
+            </form-input>
+            <div class="form--actions">
+              <btn color="primary" shape="round" wide @click.prevent="signUp()">
+                Sign Up
+              </btn>
+            </div>
+          </div>
+          <div class="form--footer color--primary weight--medium center">
+            <div>Already have an account?</div>
+            <router-link :to="{ name: 'sign-in' }">Sign In</router-link>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </template>

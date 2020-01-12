@@ -1,3 +1,35 @@
 /**
- * EnterScreen Page styles
+ * Account Page styles
  */
+.page--account {
+  padding: 0;
+}
+.account--container,
+.page--account {
+  height: 100%;
+}
+.account--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  ._item {
+    width: 100%;
+  }
+  ._text {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 25%;
+    >* {
+      width: 100%;
+    }
+  }
+  ._image {
+    display: flex;
+    height: 75%;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

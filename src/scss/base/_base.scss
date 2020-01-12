@@ -4,12 +4,15 @@
 @import '../settings';
 
 html {
+  // min-height: 100vh;
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
   font-size: $baseFontSize;
 }
 
 body {
+  height: 100%;
   min-width: 320px;
   min-height: 500px;
   font-family: $baseFont;
@@ -18,13 +21,8 @@ body {
   font-weight: 400;
   color: $black;
   letter-spacing: 0.02em;
-  background-color: $accentExtraLight;
   overflow-x: hidden;
   position: relative;
-
-  width: 100%;
-  max-width: 768px;
-  margin: 0 auto;
 }
 
 section,

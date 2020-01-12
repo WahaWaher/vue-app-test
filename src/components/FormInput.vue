@@ -2,7 +2,7 @@
   <div :class="ctrlClasses">
     <label class="form-ctrl--label" :for="name">{{ label }}</label>
     <div v-if="hint" class="form-ctrl--hint color--grey" v-tooltip="hint">
-      <svg-icon width="18" height="18">
+      <svg-icon width="16" height="16">
         <icon-help-circle />
       </svg-icon>
     </div>
