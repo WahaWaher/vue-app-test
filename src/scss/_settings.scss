@@ -1,0 +1,39 @@
+/**
+ * Colors
+ */
+$white: #fff;
+$black: #000;
+$grey: #a5a3b2;
+$greyLight: #f3f3fa;
+$primary: #181C43;
+$accent: #ff6683;
+$accentLight: #ffe0e6;
+$accentExtraLight: #faf3f3;
+
+/**
+ * Fonts
+ */
+$baseFont: 'Inter', Arial, sans-serif;
+$baseFontSize: 14px;
+
+/**
+ * Bootstrap
+ */
+// $grid-breakpoints: (xs: 0, // 0-575
+//   sm: 576px, // 576-767
+//   md: 768px, // 768-991
+//   lg: 992px, // 992-1279
+//   xl: 1280px, // 1280-...
+// );
+// $container-max-widths: (sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1200px,
+// );
+$grid-columns: 12;
+$grid-gutter-width: 20px;
+
+// Bootstrap
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins/breakpoints';

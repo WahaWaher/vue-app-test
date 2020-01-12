@@ -1,0 +1,40 @@
+/**
+ * App fonts
+ */
+$fontPath: '~@/assets/fonts/';
+
+@font-face {
+  font-family: 'Inter';
+  src:
+    url($fontPath + 'InterRegular/InterRegular.woff2') format('woff2'),
+    url($fontPath + 'InterRegular/InterRegular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src:
+    url($fontPath + 'InterMedium/InterMedium.woff2') format('woff2'),
+    url($fontPath + 'InterMedium/InterMedium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src:
+    url($fontPath + 'InterSemiBold/InterSemiBold.woff2') format('woff2'),
+    url($fontPath + 'InterSemiBold/InterSemiBold.woff') format('woff');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src:
+    url($fontPath + 'InterExtraBold/InterExtraBold.woff2') format('woff2'),
+    url($fontPath + 'InterExtraBold/InterExtraBold.woff') format('woff');
+  font-style: normal;
+  font-weight: 800;
+}

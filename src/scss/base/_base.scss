@@ -1,0 +1,85 @@
+/**
+ * Base app styles
+ */
+@import '../settings';
+
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-size: $baseFontSize;
+}
+
+body {
+  min-width: 320px;
+  min-height: 500px;
+  font-family: $baseFont;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $black;
+  letter-spacing: 0.02em;
+  background-color: $accentExtraLight;
+  overflow-x: hidden;
+  position: relative;
+
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+section,
+header,
+footer,
+main {
+  position: relative;
+}
+
+p {
+  line-height: 1.4286em;
+}
+
+/**
+ * Headings
+ * 
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.app-title-1,
+.app-title-2,
+.app-title-3,
+.app-title-4,
+.app-title-5,
+.app-title-6 {
+  font-weight: 800;
+  line-height: 1.9636rem;
+  margin: 0 0 0.5em 0;
+}
+
+h1,
+.app-title-1 {
+  font-size: 1.571428rem;
+}
+h2,
+.app-title-2 {
+  font-size: 1.4rem;
+}
+h3,
+.app-title-3 {
+  font-size: 1.2rem;
+}
+h4,
+.app-title-4 {
+  font-size: 1rem;
+}
+h5,
+.app-title-5 {
+  font-size: 0.8rem;
+}
+h6,
+.app-title-6 {
+  font-size: 0.65rem;
+}

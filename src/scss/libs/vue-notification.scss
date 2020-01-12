@@ -1,0 +1,25 @@
+/**
+ * Vue-Notofocation plugin styles
+ */
+@import '../settings';
+
+.notification__wrapper {
+  border-radius: 30px !important;
+}
+.notification__message p {
+  font-weight: 500 !important;
+  letter-spacing: 0;
+}
+.notification__content {
+  padding: 6px 35px !important;
+}
+.notification button:first-of-type {
+  margin: 0 -20 0 15px !important;
+}
+.notification button {
+  margin-right: -25px !important;
+  margin-left: 15px !important;
+}
+.notification__wrapper {
+  min-width: 260px !important;
+}

@@ -1,0 +1,92 @@
+/**
+ * "FormInput" component styles
+ */
+@import '../settings';
+
+.form-ctrl {
+  display: inline-block;
+  color: rgba($black, .8);
+  position: relative;
+}
+.form-ctrl--input {
+  &._error {
+    .form-ctrl--field {
+      background-color: $accentLight;
+    }
+  }
+  .form-ctrl--label {
+    display: block;
+  }
+  .form-ctrl--field {
+    display: block;
+    width: 100%;
+    line-height: 1;
+    border: none;
+    color: rgba($black, .8);
+    background-color: $greyLight;
+    padding: 0;
+  }
+  .form-ctrl--field-wrap {
+    position: relative;
+  }
+  .form-ctrl--message {
+    min-height: 1.5em;
+  }
+  .form-ctrl--hint {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 1.35em;
+  }
+  .form-ctrl--error {
+    color: $accent;
+  }
+  .form-ctrl--append-icon {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin-right: 1.35em;
+    > * {
+      align-self: center;
+    }
+  }
+  /**
+   * Size
+   */
+  &.form-ctrl--sm {
+    font-size: $baseFontSize;
+    margin-bottom: .25em;
+    .form-ctrl--field {
+      padding: .715em 1.35em;
+    }
+    .form-ctrl--label {
+      font-size: 12px/$baseFontSize + em;
+      font-weight: 600;
+      padding-left: 1.35rem;
+      margin-bottom: .25rem;
+    }
+    .form-ctrl--message {
+      font-size: 10px/$baseFontSize + em;
+      font-weight: 400;
+      padding-left: 1.35rem;
+      margin-top: .25rem;
+    }
+  }
+  /**
+   * Shape
+   */
+  &.form-ctrl--round {
+    .form-ctrl--field {
+      border-radius: $baseFontSize * 2;
+    }
+  }
+  /**
+   * Other
+   */
+  &.form-ctrl--wide {
+    display: block;
+    width: 100%;
+  }
+}
