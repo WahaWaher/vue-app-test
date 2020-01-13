@@ -23,9 +23,9 @@
         </li>
       </ul>
     </nav>
-    <!-- <div class="container"> -->
-    <router-view :key="$route.path" />
-    <!-- </div> -->
+    <transition name="slide-left" mode="out-in">
+      <router-view :key="$route.path" />
+    </transition>
   </div>
 </template>
 

@@ -18,8 +18,13 @@
   touch-action: manipulation;
   position: relative;
   padding: 0;
-  &:hover {}
-  &:active {}
+  transition: all $baseTrs;
+  &:hover {
+    opacity: 0.9;
+  }
+  &:active {
+    opacity: 0.95;
+  }
   /**
    * Size
    */

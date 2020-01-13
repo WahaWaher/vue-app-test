@@ -126,10 +126,6 @@ export default {
   mixins: [notifier],
   data: () => ({
     form: {
-      // fullName: '',
-      // email: '',
-      // password: '',
-      // repeatPassword: '',
       fullName: 'John Doe',
       email: 'example@acme.com',
       password: '123456789ASD!',
@@ -184,7 +180,7 @@ export default {
       }
 
       dispatch('auth/signUp', { fullName, email, password })
-        .then(() => timer(250))
+        .then(() => timer(0))
         .then(() => dispatch('auth/signIn', { email, password }))
         .then(() => $router.push({ name: 'account' }))
         .catch(({ message }) => {

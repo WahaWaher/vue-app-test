@@ -3,8 +3,7 @@
 @import './base/base';
 @import './libs/v-tooltip';
 @import './libs/vue-notification';
-
-@import './settings';
+@import './animations/slide-left-right';
 
 /**
  * Links
@@ -12,6 +11,13 @@
 a {
   color: inherit;
   text-decoration: underline;
+  transition: all $baseTrs;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.95
+  }
   &:hover {}
   &:focus {}
   &:hover {
@@ -103,8 +109,6 @@ a {
   background-color: $accentExtraLight;
   position: relative;
 }
-
-
 
 /**
  * Forms*

@@ -119,7 +119,7 @@ export default {
       }
 
       dispatch('auth/signIn', { email, password })
-        .then(() => timer(250))
+        .then(() => timer(0))
         .then(() => $router.push({ name: 'account' }))
         .catch(({ message }) => {
           notify({

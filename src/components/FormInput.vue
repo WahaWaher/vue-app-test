@@ -1,7 +1,11 @@
 <template>
   <div :class="ctrlClasses">
     <label class="form-ctrl--label" :for="name">{{ label }}</label>
-    <div v-if="hint" class="form-ctrl--hint color--grey" v-tooltip="hint">
+    <div
+      v-if="hint"
+      class="form-ctrl--hint color--grey"
+      v-tooltip="{ content: hint, trigger: 'click hover' }"
+    >
       <svg-icon width="16" height="16">
         <icon-help-circle />
       </svg-icon>

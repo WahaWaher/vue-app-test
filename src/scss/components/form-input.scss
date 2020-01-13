@@ -25,6 +25,13 @@
     color: rgba($black, .8);
     background-color: $greyLight;
     padding: 0;
+    transition: all $baseTrs;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      opacity: 0.95
+    }
   }
   .form-ctrl--field-wrap {
     position: relative;
@@ -38,6 +45,13 @@
     right: 0;
     line-height: 1;
     margin-right: 1.5em;
+    transition: all $baseTrs;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      opacity: 0.95
+    }
   }
   .form-ctrl--error {
     color: $accent;
@@ -51,6 +65,13 @@
     margin-right: 1.35em;
     > * {
       align-self: center;
+    }
+    transition: all $baseTrs;
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      opacity: 0.95
     }
   }
   /**
