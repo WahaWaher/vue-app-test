@@ -8,10 +8,24 @@
           </h1>
           <p class="color--primary">Bring your media to the next level!</p>
           <div class="enter-screen--nav">
-            <btn color="white" @click="$router.push({ name: 'sign-up' })">
+            <router-link :to="{ name: 'sign-up' }">
+              <btn color="white">
+                Sign Up
+              </btn>
+            </router-link>
+            <!-- Bug: https://github.com/vuejs/vue-router/issues/2932 -->
+            <!-- <btn color="white" @click="$router.push({ name: 'sign-up' })">
               Sign Up
-            </btn>
-            <btn
+            </btn> -->
+            <router-link :to="{ name: 'sign-in' }">
+              <btn shape="circle" color="primary">
+                <svg-icon class="color--white">
+                  <icon-arrow-right />
+                </svg-icon>
+              </btn>
+            </router-link>
+            <!-- Bug: https://github.com/vuejs/vue-router/issues/2932 -->
+            <!-- <btn
               shape="circle"
               color="primary"
               @click="$router.push({ name: 'sign-in' })"
@@ -19,7 +33,7 @@
               <svg-icon class="color--white">
                 <icon-arrow-right />
               </svg-icon>
-            </btn>
+            </btn> -->
           </div>
         </div>
       </div>

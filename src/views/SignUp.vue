@@ -111,6 +111,8 @@ import notifier from '@/mixins/notifier.mixin';
 // Libs
 import { required, minLength, email } from 'vuelidate/lib/validators';
 import { minCapitalChars, minSpecialChars } from '@/utils/validators';
+// Utils
+import timer from '@/utils/timer';
 
 export default {
   name: 'sign-up',
@@ -124,14 +126,14 @@ export default {
   mixins: [notifier],
   data: () => ({
     form: {
-      fullName: '',
-      email: '',
-      password: '',
-      repeatPassword: '',
-      // fullName: 'John Doe',
-      // email: 'example@acme.com',
-      // password: '123456789',
-      // repeatPassword: '123456789',
+      // fullName: '',
+      // email: '',
+      // password: '',
+      // repeatPassword: '',
+      fullName: 'John Doe',
+      email: 'example@acme.com',
+      password: '123456789ASD!',
+      repeatPassword: '123456789ASD!',
     },
     pwdVisible: false,
     rpPwdVisible: false,
@@ -164,22 +166,33 @@ export default {
   },
   methods: {
     signUp() {
-      let { notify /* , form */ } = this;
-      let { $touch /* , $invalid */, $pending, $error } = this.$v.form;
+      const {
+        notify,
+        form: { fullName, email, password },
+        $store: { dispatch },
+        $router,
+        $v,
+      } = this;
 
-      $touch();
+      $v.form.$touch();
 
-      if ($pending || $error) {
-        notify({
+      if ($v.form.$pending || $v.form.$error) {
+        return notify({
           type: 'error',
-          message: 'Error',
-        });
-      } else {
-        notify({
-          type: 'success',
-          message: 'Ok',
+          message: 'Invalid form fields',
         });
       }
+
+      dispatch('auth/signUp', { fullName, email, password })
+        .then(() => timer(250))
+        .then(() => dispatch('auth/signIn', { email, password }))
+        .then(() => $router.push({ name: 'account' }))
+        .catch(({ message }) => {
+          notify({
+            message,
+            type: 'error',
+          });
+        });
     },
   },
 };

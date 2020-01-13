@@ -3,8 +3,15 @@ import App from './App.vue';
 import Vuelidate from 'vuelidate';
 import VTooltip from 'v-tooltip';
 import VueNotification from '@mathieustan/vue-notification';
+import StorageBase from './utils/StorageBase';
 import router from './router';
 import store from './store';
+
+const appStorage = new StorageBase({ name: 'app-fake-storage' });
+
+appStorage.init();
+appStorage.clearStorage();
+Vue.prototype.$appStorage = appStorage;
 
 Vue.use(Vuelidate);
 Vue.use(VTooltip);

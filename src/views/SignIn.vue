@@ -66,6 +66,8 @@ import IconEyeOff from '@/components/icons/IconEyeOff';
 import notifier from '@/mixins/notifier.mixin';
 // Libs
 import { required, email } from 'vuelidate/lib/validators';
+// Utils
+import timer from '@/utils/timer';
 
 export default {
   name: 'sign-up',
@@ -80,7 +82,7 @@ export default {
   data: () => ({
     form: {
       email: 'example@acme.com',
-      password: '123456789',
+      password: '123456789ASD!',
     },
     pwdVisible: false,
   }),
@@ -99,22 +101,32 @@ export default {
   },
   methods: {
     signIn() {
-      let { notify /* , form */ } = this;
-      let { $touch /* , $invalid */, $pending, $error } = this.$v.form;
+      const {
+        notify,
+        form: { email, password },
+        $store: { dispatch },
+        $router,
+        $v,
+      } = this;
 
-      $touch();
+      $v.form.$touch();
 
-      if ($pending || $error) {
-        notify({
+      if ($v.form.$pending || $v.form.$error) {
+        return notify({
           type: 'error',
-          message: 'Error',
-        });
-      } else {
-        notify({
-          type: 'success',
-          message: 'Ok',
+          message: 'Invalid form fields',
         });
       }
+
+      dispatch('auth/signIn', { email, password })
+        .then(() => timer(250))
+        .then(() => $router.push({ name: 'account' }))
+        .catch(({ message }) => {
+          notify({
+            message,
+            type: 'error',
+          });
+        });
     },
   },
 };

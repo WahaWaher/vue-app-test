@@ -8,7 +8,7 @@ export default {
           bottom: true,
           hideIcon: true,
           showClose: true,
-          closeDelay: 5000,
+          closeDelay: 3000,
         },
         options
       );

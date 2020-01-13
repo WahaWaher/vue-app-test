@@ -18,6 +18,9 @@
         <li>
           <button @click="menu = false">Close</button>
         </li>
+        <li>
+          <button @click="getStoage">getStoage</button>
+        </li>
       </ul>
     </nav>
     <!-- <div class="container"> -->
@@ -31,6 +34,12 @@ export default {
   data: () => ({
     menu: true,
   }),
+  // temp*
+  methods: {
+    getStoage() {
+      console.log(this.$appStorage.getStorage());
+    },
+  },
 };
 </script>
 
