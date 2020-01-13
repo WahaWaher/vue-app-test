@@ -17,9 +17,9 @@ Vue.use(Vuelidate);
 Vue.use(VTooltip);
 Vue.use(VueNotification, {
   colors: {
-    success: '#181C43',
-    info: '#54d861',
-    warning: '#f8a623',
+    // success: '#181C43',
+    // info: '#54d861',
+    // warning: '#f8a623',
     error: '#ff6683',
   },
   boxShadow: 'none',

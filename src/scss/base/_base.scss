@@ -25,11 +25,27 @@ body {
   position: relative;
 }
 
-section,
-header,
-footer,
-main {
-  position: relative;
+/**
+ * Links
+ */
+a {
+  color: inherit;
+  text-decoration: underline;
+  transition: all $baseTrs;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.95
+  }
+  &:hover {}
+  &:focus {}
+  &:hover {
+    color: $accent;
+  }
+  &:active {
+    color: lighten($accent, 8%);
+  }
 }
 
 p {

@@ -1,6 +1,6 @@
 module.exports = {
-  // assetsDir: '',
-  // publicPath: '',
+  publicPath: '',
+  productionSourceMap: false,
   css: {
     sourceMap: true,
     loaderOptions: {
@@ -10,4 +10,18 @@ module.exports = {
       },
     },
   },
+  chainWebpack: config => {
+    if (process.env.NODE_ENV === 'production') {
+      config.optimization.minimizer('terser').tap(args => {
+        // Doc: https://github.com/terser/terser
+        args[0].terserOptions = {
+          ...args[0].terserOptions,
+          output: {
+            comments: false,
+          },
+        };
+        return args;
+      });
+    }
+  }
 };

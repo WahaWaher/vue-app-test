@@ -1,0 +1,18 @@
+/**
+ * Forms*
+ */
+.form--default {
+  max-width: 460px;
+  margin: 25px auto;
+  .form--container {
+    border-radius: 40px;
+    background-color: #fff;
+    padding: 22px;
+  }
+  .form--actions {
+    margin-top: 25px;
+  }
+  .form--footer {
+    margin: 25px 0;
+  }
+}

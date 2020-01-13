@@ -1,24 +1,17 @@
-# vue-app-test
+Vue App Test
+-------
+## Get started:
+```sh
+git clone https://github.com/WahaWaher/vue-app-test.git
+cd vue-app-test
+npm i
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
+# Start development
 npm run serve
-```
-
-### Compiles and minifies for production
-```
+# Build production
 npm run build
-```
-
-### Lints and fixes files
-```
+# Lint
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Figma: https://www.figma.com/file/kxyMJIuxZ1pDOvusQxXkyV/Test?node-id=0%3A1
